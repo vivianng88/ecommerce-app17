@@ -1,0 +1,146 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.navbar-default {
+  background-color: #1a2ec7;
+  border-color: #ee700d;
+}
+.navbar-default .navbar-brand {
+  color: #f9f2f3;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #e4f20c;
+}
+.navbar-default .navbar-text {
+  color: #f9f2f3;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #f9f2f3;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #e4f20c;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #1a2ec7;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #f9f2f3;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #e4f20c;
+  background-color: #ee700d;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #ee700d;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #e4f20c;
+  background-color: #ee700d;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #e4f20c;
+  background-color: #ee700d;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #e4f20c;
+  background-color: #ee700d;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ee700d;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ee700d;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #f9f2f3;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #f9f2f3;
+}
+.navbar-default .navbar-link {
+  color: #f9f2f3;
+}
+.navbar-default .navbar-link:hover {
+  color: #e4f20c;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #f9f2f3;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #e4f20c;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #e4f20c;
+    background-color: #ee700d;
+  }
+}
+
+.well {
+  width: 340px;
+  height: 380px;
+  border: 2px solid #1a2ec7;
+}
+
+.storefront-pics {
+	width: 200px;
+	height: 200px;
+}
+
+.center-it {
+	text-align: center;
+}
+
+.dropdown-menu {
+	width: resolve;
+}
+
+#category-bar {
+	border-bottom: 1px solid gray;
+	background-color: #FBF5EF;
+}
+
+.container {
+	text-align: center;
+}
+
+.nav {
+	color: blue;
+}
+
+.page-footer {
+  background-color: #1a2ec7;
+  color: white;
+}

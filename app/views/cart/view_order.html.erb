@@ -1,0 +1,44 @@
+<h1>My Cart</h1>
+
+ <table class="table">
+    <thead class="cart-header">
+     <tr>
+        <th>Item</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Qty:</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+  <tbody>  
+		<% @line_items.each do |line_item| %>
+			<tr>
+				<td><%= image_tag line_item.product.image.url, class: "cart-picture img-thumbnail" %></td>
+				<td><%= line_item.product.name %></td>
+				<td><%= number_to_currency line_item.product.price %></td>
+				<td>Qty: <%= line_item.quantity %></td>
+			</tr>	
+		<% end %>	
+	</tbody>
+</table>		
+
+	
+<div class="row">	
+	<div class="col-md-4 pull-right">	
+		<div class="panel panel-default">
+	    <div class="panel-heading">
+	      <p><h3>Final review of Order:</h3></p>
+	      <p><h5>(before taxes)</h5></p>
+	    </div> 
+	    <div class="panel-body">
+	      <p><strong>Total: <%= number_to_currency @sum %></strong></p> 
+	    </div> 
+	    <div class="panel-footer">
+	      <%= link_to "Proceed to Checkout", checkout_path, class: "btn btn-success" %>
+	    </div> 
+		</div> 
+	</div>	
+</div>
+
+

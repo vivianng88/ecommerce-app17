@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EcommerceApp</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+
+  </head>
+
+  <div class="container">
+    <p class="logo-banner"><%= image_tag("logo-banner.png", :alt => "homepage", :height =>"250", :width => "600")%></p>
+  </div>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      <%= image_tag("hourglass.png", class: 'navbar-brand', :height =>'70', :width => '55') %>  
+      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
+
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <% @categories.each do |category| %>
+              <li><%= link_to category.name, categorical_path(cat_id: category.id)%></li>
+              <% end %>
+            </ul>
+          </li>  
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+            <% @brands.each do |brand| %>
+              <li><%= link_to brand, branding_path(brand: brand)%></li>
+            <% end %>  
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        
+        <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "View Cart", view_order_path %></li>
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  Hello, <%= current_user.username %> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to "Sign In", new_user_session_path %></li>
+            <% end %>
+          </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <body>
+  	<div class="container">
+    	<%= yield %>
+  	</div>
+  </body>
+
+
+<!--Footer-->
+<footer class="page-footer center-on-small-only">
+
+    <!--Footer Links-->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="title">&copy; Stukntyme Collectibles 2017</h5>
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <!-- <div class="col-md-6">
+                <h5 class="title">Links</h5>
+                <ul>
+                    <li><a href="#!">Link 1</a></li>
+                   
+                    
+                </ul>
+            </div> -->
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+
+
+</footer>
+<!--/.Footer-->
+</html>
+
